@@ -141,20 +141,16 @@ span {
   height: calc(100vh - 70px);
   display: grid;
   place-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-#individual {
-  height: 500px;
-  width: 600px;
-}
-
-#individual .title,
-#individual .footer {
-  font-size: 30px;
-}
-
-#individual .body {
-  font-size: 25px;
+.rightSide .addCommentContainer {
+  flex: 20%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 25px;
 }
 
 .addCommentContainer input,

@@ -21,7 +21,7 @@ function Post() {
      const addComment = () =>{
       axios.post("http://localhost:3001/comments",{commentBody:newComments ,PostId: id}).then((response) => {
       const commentToAdd = {commentBody:newComments};
-      setNewComments([...comments,commentToAdd]);
+      setComments([...comments,commentToAdd]);
       setNewComments("");      
       });
     }
