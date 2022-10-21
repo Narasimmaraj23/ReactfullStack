@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -28,15 +28,16 @@ function Post() {
         },
         {
           headers: {
-            accessToken: sessionStorage.getItem("accessToken"),
+            accessToken: localStorage.getItem("accessToken"),
           },
         }
       )
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);
+
         } else {
-          const commentToAdd = { commentBody: newComment };
+          const commentToAdd = { commentBody: newComment , username : response.data.username };
           setComments([...comments, commentToAdd]);
           setNewComment("");
         }
@@ -57,7 +58,6 @@ function Post() {
           <input
             type="text"
             placeholder="Comment..."
-            autoComplete="off"
             value={newComment}
             onChange={(event) => {
               setNewComment(event.target.value);
@@ -70,7 +70,10 @@ function Post() {
             return (
               <div key={key} className="comment">
                 {comment.commentBody}
+                <label> Username:{comment.username}</label>
+                
               </div>
+
             );
           })}
         </div>

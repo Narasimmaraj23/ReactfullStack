@@ -40,6 +40,7 @@ body {
 .post .body {
   flex: 60%;
   display: grid;
+  text-align: center;
   place-content: center;
 }
 

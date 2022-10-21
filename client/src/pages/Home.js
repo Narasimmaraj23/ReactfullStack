@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <div>
-      {listOfPosts.map((value, key) => {
+      {listOfPosts.map((value, key) => {key={key}
         return (
           <div
             className="post"
